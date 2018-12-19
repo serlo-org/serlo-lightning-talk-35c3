@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 
 \usepackage{tikz}
 
@@ -8,14 +8,14 @@
     \centering
     \includegraphics[height=0.8\textheight]{map.png}
     \begin{tikzpicture}[overlay]
-        \node[anchor=east] (Berlin) at (2.4,4.96) {Berlin};
-        \node[anchor=east] (Dresden) at (2.4,3.57) {Dresden};
-        \node[anchor=east] (Munchen) at (2.4,0.88) {München};
-        \node[align=left] (Munster) at (-8,4.46) {Münster};
-        \draw[color=red] (Berlin.west) to (-1.26,4.96);
-        \draw[color=red] (Dresden.west) to (-0.96,3.57);
-        \draw[color=red] (Munchen.west) to (-2.25,0.88);
-        \draw[color=red] (Munster.east) to (-4.7,4.46);
+        \node[anchor=east] (Berlin) at (3.8,4.65) {Berlin};
+        \node[anchor=east] (Dresden) at (3.8,3.34) {Dresden};
+        \node[anchor=east] (Munchen) at (3.8,0.83) {München};
+        \node[align=left] (Munster) at (-9,4.18) {Münster};
+        \draw[color=red] (Berlin.west) to (-1.26,4.65);
+        \draw[color=red] (Dresden.west) to (-0.96,3.34);
+        \draw[color=red] (Munchen.west) to (-2.2,0.83);
+        \draw[color=red] (Munster.east) to (-4.4,4.18);
     \end{tikzpicture}
 \end{frame}
 
