@@ -1,0 +1,16 @@
+#+TITLE: Lightning Talk
+* Vorstellung von Serlo
+  - Serlo-Webseite
+  - MFNF-Wikiseite
+  - Ein paar Zahlen
+  - Serlo-Infografik
+  - Deutschlandkarte mit Standorten
+* Technische Projekte
+** "PDF"-Exporter
+   - Pipeline-Übersicht
+   - Make-Dependencies
+** Zukünftige Projekte
+   - Migrationsskizze Wikibooks -> Serlo.org
+   - Linter
+* Kontakt
+   - Kontaktfolie für Serlo, Serlo-Frontendentwicklung, Programmiergruppe
