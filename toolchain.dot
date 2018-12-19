@@ -1,0 +1,20 @@
+digraph {
+
+    wiki [label="Mathe für Nicht-Freaks", style=filled, fillcolor="#007ec1", fontcolor=white];
+    parser [label="Parser"];
+    linter [label="Linter"];
+    exporter [label="Exporter"];
+    PDF [fillcolor=green, style=filled];
+    HTML [fillcolor=green, style=filled];
+    LaTeX [fillcolor=green, style=filled];
+
+    wiki -> parser;
+    {rank=same; parser -> exporter};
+    parser -> linter;
+    exporter -> PDF;
+    exporter -> HTML;
+    exporter -> LaTeX;
+    
+    sep [style=invis];
+    Serlo [label="Serlo.org", style=filled, fillcolor="#007ec1", fontcolor=white];
+}

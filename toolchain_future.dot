@@ -1,0 +1,25 @@
+digraph {
+
+    wiki [label="Mathe für Nicht-Freaks", style=filled, fillcolor="#007ec1", fontcolor=white];
+    parser [label="Parser"];
+    linter [label="Linter"];
+    exporter [label="Exporter"];
+    Intermediate;
+    PDF [fillcolor=green, style=filled];
+    HTML [fillcolor=green, style=filled];
+    LaTeX [fillcolor=green, style=filled];
+
+    wiki -> parser;
+    {rank=same; parser -> Intermediate};
+    Intermediate -> linter;
+    Intermediate -> exporter;
+    exporter -> PDF;
+    exporter -> HTML;
+    exporter -> LaTeX;
+    
+    sep [style=invis];
+    {rank=same; sep -> Serlo [style=invis]};
+    Serlo [label="Serlo.org", style=filled, fillcolor="#007ec1", fontcolor=white];
+    Serlo -> Intermediate;
+    Intermediate -> Serlo [constraint=false];
+}
