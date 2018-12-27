@@ -1,6 +1,8 @@
 \documentclass[aspectratio=169]{beamer}
 
 \usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes}
 
 \beamertemplatenavigationsymbolsempty%
 
@@ -78,17 +80,94 @@
 
 \begin{frame}{}
     \centering
-    \includegraphics[width=.65\linewidth, angle=90]{book_graph.pdf}
+    \vfill
+    \includegraphics[width=.3\linewidth]{wikibooks.png}
+    \hfill
+    \LARGE
+    \begin{tikzpicture}[>={Stealth[sblau]}]
+        \node[node distance=3cm] (E) at (3, 0) {};
+        \node[node distance=3cm] (I) at (-2.5, 0) {};
+        \path[->, line width=2mm, sblau](I) edge (E);
+        \node[shape=star, ultra thick, white, fill=sblau, star points = 10, align=center] (M) {Magic\\!?};
+        \node[] (DUMMY) at (0, -2) {};
+    \end{tikzpicture}
+    \hfill
+    \includegraphics[width=.25\linewidth]{cover.jpg}
 \end{frame}
 
 \begin{frame}{}
     \centering
-    \includegraphics[width=\linewidth]{toolchain.eps}
+    \includegraphics[width=.60\linewidth, angle=90]{book_graph.pdf}
 \end{frame}
 
 \begin{frame}{}
     \centering
-    \includegraphics[width=\linewidth]{toolchain_future.eps}
+    \LARGE
+    \begin{tikzpicture}[>={Stealth[black]},every edge/.style={draw=black,very thick}]
+        \node[draw, rectangle, rounded corners, white, fill=sblau] (W) at (-5, 0) {Mathe für Nicht-Freaks};
+
+        \node[draw, rectangle, rounded corners, white, fill=sblau] (S) at (5, 0) {Serlo};
+
+        \node[draw, rectangle, rounded corners, black] (E) at (0, -4) {Exporter};
+
+        \node[draw, rectangle, rounded corners, black, fill=green] (PDF) at (-3, -6) {PDF};
+
+        \node[draw, rectangle, rounded corners, black, fill=green] (HTML) at (-1, -6) {HTML};
+
+        \node[draw, rectangle, rounded corners, black, fill=green] (LaTeX) at (1, -6) {LaTeX};
+
+        \node[draw, rectangle, rounded corners, black] (P)  at (-5, -2) {Parser};
+
+        \node[draw, rectangle, rounded corners, black] (L) at (4, -4) {Linter};
+
+        \path [->](W) edge (P);
+        \path [->](P) edge (E);
+        \path [->](P) edge (L);
+        
+        \path [->](E) edge (PDF);
+        \path [->](E) edge (HTML);
+        \path [->](E) edge (LaTeX);
+
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{}
+    \centering
+    \LARGE
+    \begin{tikzpicture}[>={Stealth[black]},every edge/.style={draw=black,very thick}]
+        \node[draw, rectangle, rounded corners, white, fill=sblau] (W) at (-5, 0) {Mathe für Nicht-Freaks};
+
+        \node[draw, rectangle, rounded corners, white, fill=sblau] (S) at (5, 0) {Serlo};
+
+        \node[draw, rectangle, rounded corners, black] (P)  at (-5, -2) {Parser};
+
+        \node[draw, rectangle, rounded corners, black] (E) at (0, -4) {Exporter};
+
+        \node[draw, rectangle, rounded corners, black, fill=sgrau] (I) at (4, -2) {Intermediate};
+
+        \node[draw, rectangle, rounded corners, black, fill=green] (PDF) at (-3, -6) {PDF};
+
+        \node[draw, rectangle, rounded corners, black, fill=green] (HTML) at (-1, -6) {HTML};
+
+        \node[draw, rectangle, rounded corners, black, fill=green] (LaTeX) at (1, -6) {LaTeX};
+
+        \node[draw, rectangle, rounded corners, black, fill=sgrau] (EPUB) at (3, -6) {EPUB};
+
+        \node[draw, rectangle, rounded corners, black] (L) at (4, -4) {Linter};
+
+
+        \path [->](W) edge (P);
+        
+        \path [->](E) edge (PDF);
+        \path [->](E) edge (HTML);
+        \path [->](E) edge (LaTeX);
+        \path [->](E) edge (EPUB);
+        \path [->](P) edge (I);
+        \path [<->](S) edge (I);
+        \path [<->](I) edge (E);
+        \path [->](I) edge (L);
+
+    \end{tikzpicture}
 \end{frame}
 
 \end{document}
