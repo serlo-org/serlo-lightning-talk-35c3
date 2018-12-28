@@ -21,6 +21,11 @@
 
 \begin{frame}
     \centering
+    \includegraphics[height=\textheight]{mfnf.jpg}
+\end{frame}
+
+\begin{frame}
+    \centering
     \includegraphics[height=0.9\textheight]{mfnf.png}
 \end{frame}
 
@@ -161,6 +166,8 @@
 
         \node[draw, rectangle, rounded corners, black, fill=orange] (EPUB) at (3, -6) {EPUB};
 
+        \node[draw, rectangle, rounded corners, black, fill=orange] (O) at (-5, -6) {...};
+
         \node[draw, rectangle, rounded corners, black, fill=orange] (L) at (4, -4) {Linter};
 
 
@@ -170,6 +177,7 @@
         \path [->](E) edge (HTML);
         \path [->](E) edge (LaTeX);
         \path [->](E) edge (EPUB);
+        \path [->](E) edge (O);
         \path [->](P) edge (I);
         \path [<->](S) edge (I);
         \path [<->](I) edge (E);
